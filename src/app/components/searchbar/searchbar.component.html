@@ -1,0 +1,12 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.12.1/mercadolibre/logo__small.png" alt="" width="30" height="24" class="d-inline-block align-top">
+        </a>
+        <form class="d-flex searchbar">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" (keyup.enter)="buscarItem(buscarTexto.value)" #buscarTexto>
+      <button class="btn btn-outline-success" type="submit" (click)="buscarItem(buscarTexto.value)" >Search</button>
+    </form>
+  </div>
+</nav>
+

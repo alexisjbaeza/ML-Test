@@ -1,0 +1,11 @@
+<a *ngFor="let crumb of breadcrumb; let i = index">{{crumb.name}} > </a>
+
+<div *ngIf= "(div_item)">
+    <div class="card w-75">
+    <div class="card-body">
+        <img [src]="item.picture" class="card-img-top" alt="...">
+        <h5 class="card-title">{{ item.title }}</h5>
+        <p class="card-text">{{ item.price }}</p>
+        <a href="#/items/{{item.id}}" class="stretched-link"></a>
+    </div>
+</div>
