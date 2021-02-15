@@ -17,6 +17,7 @@ export class SearchbarComponent implements OnInit {
     if (termino === ""){
       return
     }
+    console.log(termino);
     this.router.navigate(['/items'], { queryParams: { search: termino } });
   }
 

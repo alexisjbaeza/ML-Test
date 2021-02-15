@@ -1,11 +1,20 @@
-<a *ngFor="let crumb of breadcrumb; let i = index">{{crumb.name}} > </a>
-<tr *ngFor="let item of items; let i = index">
 
-        <div class="card w-75">
-    <div class="card-body">
-        <img [src]="item.picture" class="card-img-top" alt="...">
-        <h5 class="card-title">{{ item.title }}</h5>
-        <p class="card-text">{{ item.price }}</p>
+<a *ngFor="let crumb of breadcrumb; let i = index">{{crumb.name}} > </a>
+<br>
+<br>
+<div class="container_items ">
+    <div  *ngFor="let item of items; let i = index" class="d-flex bd-highlight">
+        <div class="p-2 bd-highlight">
+            <img [src]="item.picture" class="image_item" alt="quixote" height="90" >
+        </div>
+        <div class="d-flex flex-column flex-grow-1 bd-highlight mb-3 flex-datos-item">
+            <div class="p-2 bd-highlight">$ {{ item.price.amount }}</div>
+            <div class="p-2 bd-highlight">{{ item.title }}</div>
+            <div class="p-2 bd-highlight"> </div>
+          </div>
+        <div class="container_3 p-2 bd-highlight"></div>
         <a href="#/items/{{item.id}}" class="stretched-link"></a>
+      </div>
+
     </div>
-</div>
+      

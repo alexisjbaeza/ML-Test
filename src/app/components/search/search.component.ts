@@ -25,6 +25,7 @@ export class SearchComponent implements OnInit {
 
     this.activatedRoute.queryParams.subscribe(params => {
       this.itemsService.buscarItem(params['search']).subscribe((resp: SearchModel) => {
+        console.log(resp);
         this.items = resp.items;
         this.itemsService.getBreadcrumb(resp.categorias[0]).subscribe((resp: any) => {
           this.breadcrumb = resp.path_from_root.map((resp: BreadcrumbModel) => ({
