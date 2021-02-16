@@ -1,19 +1,18 @@
-.navbar{
-    background-color: #fff159;
-    display: flex;
-    flex-wrap: wrap;
+.navbar {
+  background-color: #fff159;
+  display: flex;
+  flex-wrap: wrap;
 }
-
 .no-close {
-  display:none;
+  display: none;
 }
-.navbar-img{
-    margin-right: 20px;
+.navbar-img {
+  margin-right: 20px;
+  background-color: transparent;
+  border: none;
 }
-
-.container-searchbar{
-    width: 960px;
-    margin-left: auto;
-    padding-right: auto;
-
+.container-searchbar {
+  width: 960px;
+  margin-left: auto;
+  padding-right: auto;
 }

@@ -1,3 +1,5 @@
+import { ElementRef } from '@angular/core';
+import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -11,6 +13,13 @@ export class SearchbarComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  @ViewChild('buscarTexto') buscarTexto: ElementRef;
+
+  irAlHome() {
+    this.buscarTexto.nativeElement.value ="";
+    this.router.navigate(["/"]);
   }
   
 
