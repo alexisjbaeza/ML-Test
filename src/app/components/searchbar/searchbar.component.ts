@@ -12,12 +12,12 @@ export class SearchbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
 
   buscarItem(termino: string) {
     if (termino === ""){
       return
     }
-    console.log(termino);
     this.router.navigate(['/items'], { queryParams: { search: termino } });
   }
 

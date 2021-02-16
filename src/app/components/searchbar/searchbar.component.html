@@ -1,12 +1,28 @@
 <nav class="navbar">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.12.1/mercadolibre/logo__small.png" alt="" width="30" height="24" class="d-inline-block align-top">
-        </a>
-        <form class="d-flex searchbar">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" (keyup.enter)="buscarItem(buscarTexto.value)" #buscarTexto>
-      <button class="btn btn-outline-success" type="submit" (click)="buscarItem(buscarTexto.value)" >Search</button>
-    </form>
+  <div class="mx-auto container-searchbar">
+    <div class="input-group">
+      <a class="navbar-img" href="#">
+        <img
+          src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.12.1/mercadolibre/logo__small.png"
+          class="d-inline-block align-center"
+        />
+      </a>
+      <input
+        class="form-control border shadow-none ml-4"
+        type="text"
+        placeholder="Nunca dejes de buscar"
+        (keyup.enter)="buscarItem(buscarTexto.value)"
+        #buscarTexto
+      />
+      <span class="input-group-append">
+        <button
+          class="btn btn-light border shadow-none"
+          (click)="buscarItem(buscarTexto.value)"
+          type="button"
+        >
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+    </div>
   </div>
 </nav>
-

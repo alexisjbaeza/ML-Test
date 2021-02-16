@@ -11,8 +11,7 @@ import { ItemsService } from 'src/app/services/items.service';
 })
 export class ItemComponent implements OnInit {
 
-  item : ItemModel;
-  div_item = false;
+  item: ItemModel;
   breadcrumb: BreadcrumbModel[] = [];
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -21,16 +20,15 @@ export class ItemComponent implements OnInit {
   ngOnInit(): void {
 
     this.activatedRoute.params.subscribe(params => {
-      this.itemsService.getItem(params['id']).subscribe((resp : ItemModel) => {
-        this.div_item = true;
+      this.itemsService.getItem(params['id']).subscribe((resp: ItemModel) => {
         this.item = resp;
         this.itemsService.getBreadcrumb(this.item.category_id).subscribe((resp: any) => {
-        this.breadcrumb = resp.path_from_root.map((resp: BreadcrumbModel) => ({
+          this.breadcrumb = resp.path_from_root.map((resp: BreadcrumbModel) => ({
             id: resp.id,
             name: resp.name
           }));
         });
-        
+
 
       });
     });

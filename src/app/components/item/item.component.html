@@ -1,11 +1,39 @@
-<a *ngFor="let crumb of breadcrumb; let i = index">{{crumb.name}} > </a>
-
-<div *ngIf= "(div_item)">
-    <div class="card w-75">
-    <div class="card-body">
-        <img [src]="item.picture" class="card-img-top" alt="...">
-        <h5 class="card-title">{{ item.title }}</h5>
-        <p class="card-text">{{ item.price }}</p>
-        <a href="#/items/{{item.id}}" class="stretched-link"></a>
+<div class="container-breadcrumb my-1 mx-auto">
+  <a class="label-breadcrumb" *ngFor="let crumb of breadcrumb"
+    >{{ crumb.name }} >
+  </a>
+</div>
+<div *ngIf="item" class="row mx-auto">
+  <div class="side">
+    <div class="pl-2 d-flex flex-row">
+      <div class="p-2 div-image d-flex justify-content-center">
+        <img [src]="item.picture" class="image-item" />
+      </div>
     </div>
+  </div>
+  <div class="main">
+    <div
+      class="d-flex p-3 mb-4 flex-grow-1 flex-column flex-start container-datos-item"
+    >
+      <p class="label-condicion">{{ item.condition | condicion }}</p>
+      <h2 class="label-titulo">{{ item.title }}</h2>
+      <div class="pl-2 d-flex flex-row" style="height: 25px">
+        <h5 class="label-amount">
+          {{
+            item.price.amount
+              | currency: item.price.currency:"symbol-narrow":".0-0"
+              | separadorMiles
+          }}
+        </h5>
+        <p class="label-decimals">{{ item.price.decimals | decimales }}</p>
+      </div>
+      <button type="button" class="btn btn-primary btn-lg btn-block mt-4">
+        Comprar
+      </button>
+    </div>
+  </div>
+  <div class="container-descripcion px-4">
+    <h3>Descripción del producto</h3>
+    <p class="pt-1">{{ item.description }}</p>
+  </div>
 </div>

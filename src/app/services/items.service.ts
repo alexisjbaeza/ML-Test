@@ -4,14 +4,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
   providedIn: 'root'
 })
 
-
-
-
 export class ItemsService {
 
-
-  constructor(private http : HttpClient) { }
-
+  constructor(private http: HttpClient) { }
 
   buscarItem(termino: string) {
     return this.http.get(`http://localhost:8081/api/items?q=${termino}`);

@@ -6,8 +6,8 @@ import { SearchComponent } from './components/search/search.component';
 const APP_ROUTES: Routes = [
   { path: '', component: HomeComponent },
   { path: 'items', component: SearchComponent },
-  { path: 'items/:id', component: ItemComponent }
-  // { path: '**', pathMatch: 'full', redirectTo: 'home' }
+  { path: 'items/:id', component: ItemComponent },
+  { path: '**', pathMatch: 'full', redirectTo: '/' }
 ];
 
-export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash:true});
+export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, { useHash: true });

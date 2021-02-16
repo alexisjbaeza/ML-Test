@@ -8,6 +8,10 @@ import { SearchComponent } from './components/search/search.component';
 import { ItemComponent } from './components/item/item.component';
 import { ItemsService } from './services/items.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CurrencyPipe } from '@angular/common';
+import { SeparadorMilesPipe } from './pipes/separador-miles.pipe';
+import { DecimalesPipe } from './pipes/decimales.pipe';
+import { CondicionPipe } from './pipes/condicion.pipe';
 
 @NgModule({
   declarations: [
@@ -15,14 +19,17 @@ import { HttpClientModule } from '@angular/common/http';
     SearchbarComponent,
     HomeComponent,
     SearchComponent,
-    ItemComponent
+    ItemComponent,
+    SeparadorMilesPipe,
+    DecimalesPipe,
+    CondicionPipe
   ],
   imports: [
     BrowserModule,
     APP_ROUTING,
     HttpClientModule
   ],
-  providers: [ItemsService],
+  providers: [ItemsService, CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

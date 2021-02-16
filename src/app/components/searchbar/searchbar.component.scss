@@ -1,20 +1,19 @@
-.nav-search{
-    background-color: #fff159;
-    border: 0;
-    position: relative;
-    display: block;
-}
-
 .navbar{
     background-color: #fff159;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.searchbar{
-    align-self: center;
+.no-close {
+  display:none;
+}
+.navbar-img{
+    margin-right: 20px;
 }
 
-.nav-logo {
-    background-image: url(https://http2.mlstatic.com/frontend-assets/ui-navigation/5.12.1/mercadolibre/logo__small.png);
-    background-repeat: no-repeat;
+.container-searchbar{
+    width: 960px;
+    margin-left: auto;
+    padding-right: auto;
 
 }
