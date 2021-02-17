@@ -6,5 +6,5 @@ Con la finalidad de optimizar el SEO del sitio, se opta por realizar un SSR en b
 
 ## Iniciar servidor
 
-Run `npm run dev:ssr` para iniciar el servidor. Una vez finalizada la inicialización del servidor, dirigirse a `http://localhost:4200/` para visualizar la app web.
+Correr desde el directorio raíz del proyecto `npm run dev:ssr` para iniciar el servidor. Una vez finalizada la inicialización del servidor, dirigirse a `http://localhost:4200/` para visualizar la app web.
 
