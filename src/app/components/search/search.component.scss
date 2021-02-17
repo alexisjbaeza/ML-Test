@@ -5,7 +5,8 @@
 }
 .image-item {
   max-width: 160px;
-  max-height: 160px;
+  height: 160px;
+  object-fit: fill;
 }
 
 .container-items {
@@ -20,6 +21,11 @@
   width: 960px;
 }
 
+.container-ubicacion {
+  width: 120px;
+  margin-right: 3%;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -29,6 +35,10 @@ a {
 }
 .label-decimals {
   font-size: 10px;
+}
+.label-title{
+  margin-top: 4px;
+  max-width: 450px;
 }
 p {
   font-size: 17px;

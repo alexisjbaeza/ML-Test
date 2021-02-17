@@ -8,12 +8,16 @@ export class ItemsService {
 
   constructor(private http: HttpClient) { }
 
-  buscarItem(termino: string) {
-    return this.http.get(`http://localhost:8081/api/items?q=${termino}`);
+  buscarItem(busqueda: string, por_categoria: boolean) {
+    if (por_categoria) {
+      return this.http.get(`http://localhost:4200/api/items?category=${busqueda}`);
+    } else {
+      return this.http.get(`http://localhost:4200/api/items?q=${busqueda}`);
+    }
   }
 
   getItem(id: string) {
-    return this.http.get(`http://localhost:8081/api/items/${id}`);
+    return this.http.get(`http://localhost:4200/api/items/${id}`);
   }
 
   getBreadcrumb(id: string) {

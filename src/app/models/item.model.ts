@@ -9,7 +9,8 @@ export interface ItemModel {
     picture: string;
     condition: string;
     free_shipping: boolean;
-    description: string;
-    category_id: string;
+    description?: string;
+    category_id?: string;
+    state_name: string;
 }
 

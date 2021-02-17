@@ -25,7 +25,7 @@ import { CondicionPipe } from './pipes/condicion.pipe';
     CondicionPipe
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     APP_ROUTING,
     HttpClientModule
   ],
