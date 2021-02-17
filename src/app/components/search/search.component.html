@@ -1,7 +1,11 @@
 <div class="container-breadcrumb my-1 mx-auto">
-  <a class="label-breadcrumb" *ngFor="let crumb of breadcrumb"
-    >{{ crumb.name }} >
-  </a>
+  <span *ngFor="let crumb of breadcrumb; last as isLast">
+     <a class="label-breadcrumb"  href="#/items?category={{ crumb.id }}"  *ngIf="isLast; else elseBlock"><span> {{ crumb.name }}</span></a>
+        <ng-template #elseBlock>
+          <a class="label-breadcrumb" href="#/items?category={{ crumb.id }}" #elseBlock><span> {{ crumb.name }} </span> </a>
+          <a> <span> ></span></a>
+        </ng-template>
+  </span>
 </div>
 <div class="container-items mx-auto">
   <div *ngFor="let item of items" class="d-flex container-item border-bottom">
@@ -35,11 +39,13 @@
           </span>
         </div>
       </div>
-      <div>
+      <div class="label-title">
         <p>{{ item.title }}</p>
       </div>
     </div>
 
-    <div class="p-2"></div>
+    <div class="align-self-center container-ubicacion">
+      {{ item.state_name }}
+    </div>
   </div>
 </div>

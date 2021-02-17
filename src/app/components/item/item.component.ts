@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { BreadcrumbModel } from 'src/app/models/breadcrumb.models';
 import { ItemModel } from 'src/app/models/item.model';
 import { ItemsService } from 'src/app/services/items.service';
+import { SeoService } from 'src/app/services/seo.service';
 
 @Component({
   selector: 'app-item',
@@ -15,7 +17,9 @@ export class ItemComponent implements OnInit {
   breadcrumb: BreadcrumbModel[] = [];
 
   constructor(private activatedRoute: ActivatedRoute,
-    private itemsService: ItemsService) { }
+    private itemsService: ItemsService,
+    private title: Title,
+    private seoService: SeoService) { }
 
   ngOnInit(): void {
 
@@ -28,9 +32,28 @@ export class ItemComponent implements OnInit {
             name: resp.name
           }));
         });
-
-
+        this.optimizarSeo(this.item, this.breadcrumb);
       });
+    });
+  }
+
+  optimizarSeo(item: ItemModel, breadCrumb: BreadcrumbModel[]) {
+    const seo_title: string = `${item.title} | Mercado Libre`;
+    let seo_keywords = `Mercado Libre, ${item.title},`;
+    let seo_description = `Mercado Libre - ${item.title} -`;
+    const seo_slug = `items/${item.id}`;
+    breadCrumb.forEach(element => {
+      seo_description = seo_description.concat(` ${element.name} -`)
+      seo_keywords = seo_keywords.concat(` ${element.name},`)
+    })
+    seo_description = seo_description.slice(0, -1);
+    seo_keywords = seo_keywords.slice(0, -1);
+    this.title.setTitle(seo_title);
+    this.seoService.generarTags({
+      title: seo_title,
+      description: seo_description,
+      slug: seo_slug,
+      keywords: seo_keywords
     });
   }
 
