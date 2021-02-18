@@ -21,5 +21,5 @@ Verificar que no esté ocupado el puerto 4200.
 
 Ejecutar comando `npm run dev:ssr`para iniciar el servidor. 
 
-Una vez finalizada la inicialización del servidor, dirigirse a [http://localhost:4200] (http://localhost:4200) para visualizar la app web.
+Una vez finalizada la inicialización del servidor, dirigirse a http://localhost:4200 para visualizar la app web.
 
