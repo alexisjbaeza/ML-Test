@@ -50,20 +50,21 @@ export class SearchComponent implements OnInit {
 
   }
 
-  optimizarSeo(termino_busqueda: String, breadCrumb : BreadcrumbModel[], por_categoria: boolean){
+  optimizarSeo(termino_busqueda: String, breadCrumb: BreadcrumbModel[], por_categoria: boolean) {
     let seo_title, seo_keywords, seo_description, seo_slug;
-    if(por_categoria){
-      seo_title = `${breadCrumb[0].name} | Mercado Libre`;
-      seo_keywords = `Mercado Libre ,`;
-      seo_description = `Mercado Libre -`;
+    const ml_str = "Mercado Libre";
+    if (por_categoria) {
+      seo_title = `${breadCrumb[0].name} | ${ml_str}`;
+      seo_keywords = `${ml_str} ,`;
+      seo_description = `${ml_str} -`;
       seo_slug = `items?category=${termino_busqueda}`;
-    }else{
-      seo_title = `${termino_busqueda} | Mercado Libre`;
-      seo_keywords = `Mercado Libre, ${termino_busqueda},`;
-      seo_description = `Mercado Libre - ${termino_busqueda} -`;
+    } else {
+      seo_title = `${termino_busqueda} | ${ml_str}`;
+      seo_keywords = `${ml_str}, ${termino_busqueda},`;
+      seo_description = `${ml_str} - ${termino_busqueda} -`;
       seo_slug = `items?search=${termino_busqueda}`;
     }
-    breadCrumb.forEach(element=>{
+    breadCrumb.forEach(element => {
       seo_description = seo_description.concat(` ${element.name} -`)
       seo_keywords = seo_keywords.concat(` ${element.name},`)
     })

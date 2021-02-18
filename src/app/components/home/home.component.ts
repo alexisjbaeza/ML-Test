@@ -17,9 +17,10 @@ export class HomeComponent implements OnInit {
   }
 
   optimizarSeo() {
-    const seo_title: string = `Mercado Libre`;
-    const seo_keywords = `Mercado Libre, Compra, Vende`;
-    const seo_description = `Mercado Libre - La comunidad de compra y venta online más grande de América Latina.`;
+    const ml_str = "Mercado Libre";
+    const seo_title: string = `${ml_str}`;
+    const seo_keywords = `${ml_str}, Compra, Vende`;
+    const seo_description = `${ml_str} - La comunidad de compra y venta online más grande de América Latina.`;
     const seo_slug = ``;
     this.title.setTitle(seo_title);
     this.seoService.generarTags({

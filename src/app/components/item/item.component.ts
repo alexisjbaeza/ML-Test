@@ -38,9 +38,10 @@ export class ItemComponent implements OnInit {
   }
 
   optimizarSeo(item: ItemModel, breadCrumb: BreadcrumbModel[]) {
-    const seo_title: string = `${item.title} | Mercado Libre`;
-    let seo_keywords = `Mercado Libre, ${item.title},`;
-    let seo_description = `Mercado Libre - ${item.title} -`;
+    const ml_str = "Mercado Libre";
+    const seo_title: string = `${item.title} | ${ml_str}`;
+    let seo_keywords = `${ml_str}, ${item.title},`;
+    let seo_description = `${ml_str} - ${item.title} -`;
     const seo_slug = `items/${item.id}`;
     breadCrumb.forEach(element => {
       seo_description = seo_description.concat(` ${element.name} -`)
