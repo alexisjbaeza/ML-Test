@@ -1,0 +1,43 @@
+<div class="container-breadcrumb my-1 mx-auto">
+  <span *ngFor="let crumb of breadcrumb; last as isLast">
+     <a class="label-breadcrumb"  href="#/items?category={{ crumb.id }}"  *ngIf="isLast; else elseBlock"><span> {{ crumb.name }}</span></a>
+        <ng-template #elseBlock>
+          <a class="label-breadcrumb" href="#/items?category={{ crumb.id }}" #elseBlock><span> {{ crumb.name }} </span> </a>
+          <a> <span> ></span></a>
+        </ng-template>
+  </span>
+</div>
+<div *ngIf="item" class="row mx-auto">
+  <div class="side">
+    <div class="pl-2 d-flex flex-row">
+      <div class="p-2 div-image d-flex justify-content-center">
+        <img [src]="item.picture" class="image-item" />
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div
+      class="d-flex p-3 mb-4 flex-grow-1 flex-column flex-start container-datos-item"
+    >
+      <p class="label-condicion">{{ item.condition | condicion }}</p>
+      <h2 class="label-titulo">{{ item.title }}</h2>
+      <div class="pl-2 d-flex flex-row" style="height: 25px">
+        <h5 class="label-amount">
+          {{
+            item.price.amount
+              | currency: item.price.currency:"symbol-narrow":".0-0"
+              | separadorMiles
+          }}
+        </h5>
+        <p class="label-decimals">{{ item.price.decimals | decimales }}</p>
+      </div>
+      <button type="button" class="btn btn-primary btn-lg btn-block mt-4">
+        Comprar
+      </button>
+    </div>
+  </div>
+  <div class="container-descripcion px-4">
+    <h3>Descripción del producto</h3>
+    <p class="pt-1">{{ item.description }}</p>
+  </div>
+</div>

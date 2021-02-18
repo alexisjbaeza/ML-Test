@@ -1,0 +1,94 @@
+.div-image {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+.image-item {
+  max-width: 80%;
+  max-width: 80%;
+}
+
+.container-items {
+  background-color: white;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.container-breadcrumb {
+  max-width: 960px;
+}
+
+.container-datos-item {
+  width: 100%;
+}
+.continer-descripcion {
+  width: 90%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+.label-amount {
+  font-size: 17px;
+}
+.label-decimals {
+  font-size: 10px;
+}
+.label-crumb {
+  font-size: 14px;
+}
+p {
+  font-size: 17px;
+}
+.label-breadcrumb {
+  font-size: 14px;
+  color: #666;
+}
+
+.label-condicion {
+  font-size: 14px;
+  height: 20px;
+}
+.label-titulo {
+  font-size: 22px;
+}
+.label-amount {
+  font-size: 30px;
+  height: 40px;
+}
+.label-decimals {
+  font-size: 15px;
+}
+.fa-stack {
+  margin-left: 2px;
+  font-size: 0.8em;
+}
+i {
+  vertical-align: middle;
+}
+
+.row {
+  max-width: 960px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.side {
+  flex: 60%;
+  background-color: white;
+  padding: 20px;
+  vertical-align: middle;
+}
+
+.main {
+  flex: 40%;
+  background-color: white;
+  padding: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .row {
+    flex-direction: column;
+  }
+}
